@@ -91,6 +91,30 @@ This connects the P0 engineering baseline to the observation lattice work and gi
 - Which parts can be formally specified and proven
 - How the evidence architecture maps onto autonomous systems
 
+
+### EXTERNAL VALIDATION RULE (Aria, 2026-08-26)
+
+External validation may change the research question or funding framing, but it may NOT retroactively alter P0 evidence.
+
+- If ONR says the interesting problem is autonomy under intermittent communications → formulate a new research objective against P0.
+- If NSF says the commercial opportunity needs a different application domain → adapt the proposal.
+- If an officer challenges an assumption → record it as feedback.
+
+But P0 itself remains the reference baseline.
+
+This preserves the custody principle the project is trying to demonstrate.
+
+When a program officer responds:
+- Do NOT immediately interpret the response as validation.
+- Treat it as a new piece of external evidence.
+- Record the actual response verbatim.
+- Distinguish explicit program-officer statements from our interpretation.
+- Only then update the funding hypothesis.
+
+This is the same evidence discipline applied one level higher.
+
+**P0 is the instrument now. The agencies are the next experiment.**
+
 ### STANDING INSTRUCTIONS (from active_user_instructions)
 
 - Preserve project epistemic state and immutable evidence.
