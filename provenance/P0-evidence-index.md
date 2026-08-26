@@ -154,6 +154,23 @@ PYTHONPATH=implementation:independent python3 tests/iv_p0_002_differential_test.
 
 **Claim status:** ESTABLISHED
 
+
+---
+
+## Epistemic Boundary
+
+**What the evidence establishes:** The P0 implementation baseline is frozen and independently behaviorally verified against the frozen contracts. Two independent implementations (zero shared code) converge on the same behavior across 15 differential cases, recursive custody, and corruption detection.
+
+**What the evidence does NOT establish:** Formal correctness of the P0 specification itself. In a custody model, independent implementations agreeing is not equivalent to proving the trusted specification. A flawed specification can propagate its flaw into every faithful implementation.
+
+**The correct P0 status statement:**
+> P0 implementation baseline is frozen and independently behaviorally verified against the frozen contracts.
+
+**NOT:**
+> P0 is formally proven correct.
+
+**Formal proof of the P0 specification is a FUTURE RESEARCH OBJECTIVE**, not current evidence. If formalization becomes funded research, it is a new work package against the frozen baseline — not a reason to reopen P0.
+
 ---
 
 ## Claims that are NOT established
@@ -169,6 +186,7 @@ The following are explicitly NOT established by the P0 evidence:
 | Formal proof of complete system | NOT ESTABLISHED | Formal verification (Lean/Coq) of all components |
 | P1 (cryptographic receipts) | NOT ESTABLISHED | New contract, implementation, independent verification |
 | P2 (transaction integrity / 2PC) | NOT ESTABLISHED | New contract, implementation, independent verification |
+| Formal proof of P0 specification | NOT ESTABLISHED (FUTURE RESEARCH) | Formal verification (Lean/Coq) of the frozen contracts. Independent implementations agreeing ≠ proving the trusted specification. A flawed spec propagates flaws into faithful implementations. |
 | ONR/NSF funding fit confirmed | NOT ESTABLISHED | Program officer response |
 | Operational autonomous-system validation | NOT ESTABLISHED | Testing in operational conditions |
 

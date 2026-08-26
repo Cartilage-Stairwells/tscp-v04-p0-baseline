@@ -26,6 +26,7 @@
 | P2 / 2PC | 🔴 HOLD | Not yet authorized |
 | Public repository | 🔴 Separate decision | Pending IP strategy |
 | P0 modifications | 🔴 PROHIBITED | Unless explicit new scope authorized |
+| Formal proof of P0 specification | 🟡 FUTURE RESEARCH | Not current evidence — do not reopen P0 |
 
 ### Funding
 
@@ -59,6 +60,36 @@
 6. **Do not let narrative get ahead of evidence.** This is the project's founding discipline. The repository establishes what was frozen. It does not establish naval deployment, operational autonomy, production security, commercial readiness, or formal proof of the complete system. Those remain separate propositions requiring separate evidence.
 
 7. **Secrets stay out.** No credentials, tokens, API keys, or private correspondence in the repository or any public-facing material.
+
+
+### EPISTEMIC CORRECTION (Aria, 2026-08-26)
+
+The correct P0 status statement is:
+
+> P0 implementation baseline is frozen and independently behaviorally verified against the frozen contracts.
+
+NOT:
+
+> P0 is formally proven correct.
+
+And definitely NOT:
+
+> The entire TSCP-PL architecture is proven.
+
+**Why this matters:** In a custody model, independent implementations agreeing is not equivalent to proving the trusted specification. A flawed specification can propagate its flaw into every faithful implementation. The current evidence establishes behavioral agreement against the frozen contracts — it does not establish formal correctness of the contracts themselves.
+
+**Formal proof of the P0 specification is a FUTURE RESEARCH OBJECTIVE.** If formalization becomes funded research, it is a new work package against the frozen baseline — NOT a reason to reopen P0.
+
+**The research frontier:** What can be formally established about execution integrity when the verifier's observation boundary is constrained?
+
+This connects the P0 engineering baseline to the observation lattice work and gives agencies a legitimate research program:
+
+- Minimum sufficient observation for an integrity predicate
+- What integrity properties remain undecidable from restricted observations
+- How evidence behaves under distributed/communication-constrained execution
+- How independent verification remains meaningful when the execution environment is only partially trusted
+- Which parts can be formally specified and proven
+- How the evidence architecture maps onto autonomous systems
 
 ### STANDING INSTRUCTIONS (from active_user_instructions)
 
@@ -113,6 +144,12 @@
 The next question is NOT "Can we build more?"
 
 It's: "Does this independently verified evidence boundary solve a problem that ONR/NSF actually care about enough to fund the next experiment?"
+
+## The Research Proposition
+
+> We have established a reproducible, independently verified P0 evidence boundary; the proposed research is to determine how far that boundary can be extended toward formally grounded execution integrity under constrained observation and trust.
+
+That is a research proposition, rather than a claim that we've already solved the whole problem.
 
 That's the uncertainty worth spending the next cycle on.
 
