@@ -1,4 +1,5 @@
 f94b5e6ed437904a31fe0cb3be95437532a0b57c94cf266a098d2ba047e948c6  ./.gitignore
+57c57828564152b0f9b63c82046a978b1671fe08fce0947297ac50ab6e1cdf1b  ./PROJECT_HANDOFF.md
 65938d777d369b3348e9766efebf79edc213c4505d4a58a7efe681e854154d57  ./README.md
 3a99fddb07185e0c6d0b0c575bf195144bc536dff93fd7891f63ebb7cd7d76b1  ./conftest.py
 feed5c5e0c593d59a53881801d0ccc566b48a79cdbf70857aca703f553a2e5d0  ./evidence/iv_p0_001_verification_artifact.json
@@ -9,8 +10,10 @@ d37ee06e704bb7f5d4c202caa80ea165f47088c0acc54dbe540a0d07139e78ab  ./evidence/res
 a9046a18af300d54e4dd9f60c8745a323b1de32fa7780c9fba11aa820095d76b  ./independent/independent_resolver_v1.py
 e17e977ad3b98ca358a6cefd1a319ff20be14e0d03a365013721cb48ca1a84c7  ./independent/independent_verification_harness.py
 27e0bff84c291376c8cd208843c49b4cb48fc1089dedd25511116843c3bc6af8  ./independent/independent_verifier_v1.py
+653e9bd86dd4c823f01852533d7274177e4a4dd2b283c076bc8a22bb13c7d1f8  ./provenance/P0-evidence-index.md
 62fc3020d591f8197cbcde244a1f536e2ea726b82b88b688ea2a1541a681edee  ./provenance/P0-freeze-record.md
 550a7ff60a55a5302800c103c03ef608405382cd54bbe3ed1f9561d5cf3b8391  ./provenance/RFC-R1-revision.md
+40c7f7ff4e18650758cb44f700c14429ddd90de92f75d0b0ca1f3b8e08115fd9  ./provenance/verification-manifest.json
 58cfab318f0265148f065a7bf5a8714536176ce3a2a25befd0a743653021f5fa  ./specs/P0-ARTIFACT-REFERENCE-SPEC-001.md
 7dffb2b41af28fcb3921d6f04f2b0aa82c033e9dad066eb88ca5dd3e6888ff03  ./specs/P0-CANONICAL-SERIALIZATION-SPEC-001.md
 8ae81b0604afde7fbf3e855d3216310222ff1167d4efefff3428435a9d3f52e8  ./specs/P0-RESOLVER-IMPLEMENTATION-001.md
