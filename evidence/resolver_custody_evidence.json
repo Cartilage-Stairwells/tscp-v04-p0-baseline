@@ -1,0 +1,71 @@
+{
+  "resolver_evidence_id": "RES-EV-20260826T203515Z",
+  "artifact_ref": {
+    "artifact_id": "art-IV-P0-001-verification-artifact",
+    "declared_sha256": "feed5c5e0c593d59a53881801d0ccc566b48a79cdbf70857aca703f553a2e5d0",
+    "declared_byte_size": 5533,
+    "source_kind": "FILESYSTEM",
+    "source_locator": "filesystem:/app/conversations/6a7d1f6e12b12b330049132d/tscp-v04-p0-baseline/evidence/iv_p0_001_verification_artifact.json",
+    "namespace": "v0.4",
+    "resolver_policy": "STRICT",
+    "reference_version": "ref-v1"
+  },
+  "resolution_result": {
+    "resolution_status": "RESOLVED",
+    "resolved_location": "/app/conversations/6a7d1f6e12b12b330049132d/tscp-v04-p0-baseline/evidence/iv_p0_001_verification_artifact.json",
+    "observed_byte_size": 5533,
+    "observed_sha256": "feed5c5e0c593d59a53881801d0ccc566b48a79cdbf70857aca703f553a2e5d0",
+    "declared_sha256": "feed5c5e0c593d59a53881801d0ccc566b48a79cdbf70857aca703f553a2e5d0",
+    "declared_byte_size": 5533,
+    "identity_match": "MATCH",
+    "resolver_identity": "resolver-custody-001",
+    "evidence_id": "ev-8711871de365",
+    "observed_at": "2026-08-26T20:35:15.000Z"
+  },
+  "custody_verdict": "ELIGIBLE_FOR_VERIFIED",
+  "promotion_permitted": true,
+  "acceptance_conditions": {
+    "AC-1": {
+      "description": "ArtifactRef constructed",
+      "result": true
+    },
+    "AC-2": {
+      "description": "Authorized persistent source",
+      "result": true
+    },
+    "AC-3": {
+      "description": "No conversation/model state",
+      "result": true
+    },
+    "AC-4": {
+      "description": "Complete bytes readable",
+      "result": true
+    },
+    "AC-5": {
+      "description": "Byte size matches",
+      "result": true
+    },
+    "AC-6": {
+      "description": "SHA-256 matches",
+      "result": true
+    },
+    "AC-7": {
+      "description": "Evidence not VERIFIED",
+      "result": true
+    },
+    "AC-8": {
+      "description": "Custody layer evaluates",
+      "result": true
+    },
+    "AC-9": {
+      "description": "Promotion gate",
+      "result": true
+    },
+    "AC-10": {
+      "description": "P0 freeze eligible",
+      "result": true
+    }
+  },
+  "all_acceptance_conditions_pass": true,
+  "timestamp": "2026-08-26T20:35:15.%03fZ"
+}

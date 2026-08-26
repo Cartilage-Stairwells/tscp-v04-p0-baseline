@@ -1,0 +1,60 @@
+{
+  "manifest_id": "v0.4-p0-verification-manifest",
+  "generated_at": "2026-08-26T20:35:00Z",
+  "environment": {
+    "python": "3.11.15 (CPython)",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "machine": "x86_64"
+  },
+  "test_commands": [
+    "PYTHONPATH=implementation:independent python3 tests/test_resolver.py",
+    "PYTHONPATH=implementation:independent python3 independent/independent_verification_harness.py",
+    "PYTHONPATH=implementation:independent python3 tests/recursive_custody_processing.py",
+    "PYTHONPATH=implementation:independent python3 tests/iv_p0_002_differential_test.py"
+  ],
+  "test_results": {
+    "production_acceptance": "PASS",
+    "iv_p0_001_independent_serialization": "PASS",
+    "recursive_custody": "PASS (10/10 AC + adversarial + restore)",
+    "iv_p0_002_differential": "PASS (15/15 differential + recursive + corruption + restore)"
+  },
+  "frozen_components": {
+    "specs": [
+      "P0-CANONICAL-SERIALIZATION-SPEC-001.md",
+      "P0-ARTIFACT-REFERENCE-SPEC-001.md",
+      "P0-RESOLVER-SPEC-001.md",
+      "P0-RESOLVER-IMPLEMENTATION-001.md"
+    ],
+    "implementation": [
+      "canonical_serialization.py",
+      "resolver.py"
+    ],
+    "independent": [
+      "independent_resolver_v1.py",
+      "independent_verifier_v1.py",
+      "independent_verification_harness.py"
+    ],
+    "tests": [
+      "test_resolver.py",
+      "recursive_custody_processing.py",
+      "iv_p0_002_differential_test.py"
+    ],
+    "evidence": [
+      "iv_p0_001_verification_artifact.json",
+      "iv_p0_002_verification_artifact.json",
+      "resolver_custody_evidence.json"
+    ]
+  },
+  "explicit_exclusions": [
+    "P1 receipt implementation",
+    "P2 transaction/2PC implementation",
+    "Full v0.4 system",
+    "Operational autonomous-system validation",
+    "Production deployment claims",
+    "Formal proof of the entire implementation",
+    "Pre-RFC-R1 correction source files (archived separately)",
+    "Credentials and secrets",
+    "Private correspondence"
+  ]
+}

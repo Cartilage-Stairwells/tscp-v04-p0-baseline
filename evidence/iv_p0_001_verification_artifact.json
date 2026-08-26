@@ -1,0 +1,156 @@
+{
+  "verification_run_id": "IV-P0-001-20260826T195724Z",
+  "acceptance_predicate": "IV-P0-001",
+  "implementation_identity": "independent_verifier_v1 (this file)",
+  "implementation_sha256": "27e0bff84c291376c8cd208843c49b4cb48fc1089dedd25511116843c3bc6af8",
+  "implementation_file": "independent_verifier_v1.py",
+  "spec_revision": "P0-CANONICAL-SERIALIZATION-SPEC-001 (post-RFC-R1)",
+  "spec_rfc_correction": "RFC-R1 (RFC 8257 \u2192 RFC 8785/8259) \u2014 applied 2026-08-26",
+  "independence_constraints": [
+    "No imports from canonical_serialization.py",
+    "No imports from resolver.py",
+    "No imports from independent_verification_harness.py",
+    "Golden vector inputs parsed from spec \u00a712 JSON strings, not production code",
+    "Expected hashes from spec \u00a712, not production constants",
+    "Serializer derived from spec \u00a72-\u00a79 rules, not production code"
+  ],
+  "golden_vectors": [
+    {
+      "golden_vector_id": "GV1",
+      "canonical_byte_size": 659,
+      "expected_byte_size": 659,
+      "size_match": true,
+      "byte_comparison": "BYTE-IDENTICAL",
+      "independent_sha256": "e559c31411bd10f49360d17921222782ecd663fd110d33d9d4af20256dacda08",
+      "expected_sha256": "e559c31411bd10f49360d17921222782ecd663fd110d33d9d4af20256dacda08",
+      "hash_match": true
+    },
+    {
+      "golden_vector_id": "GV2",
+      "canonical_byte_size": 868,
+      "expected_byte_size": 868,
+      "size_match": true,
+      "byte_comparison": "BYTE-IDENTICAL",
+      "independent_sha256": "84542189271d8c99dfa83c3623828dc77af17017f71597ca0efeb77b526858c5",
+      "expected_sha256": "84542189271d8c99dfa83c3623828dc77af17017f71597ca0efeb77b526858c5",
+      "hash_match": true
+    },
+    {
+      "golden_vector_id": "GV3",
+      "canonical_byte_size": 765,
+      "expected_byte_size": 765,
+      "size_match": true,
+      "byte_comparison": "BYTE-IDENTICAL",
+      "independent_sha256": "b45863b86a5aeb2e333ac01be66d89ac86d5947bf82afa094ca7872f62925c9f",
+      "expected_sha256": "b45863b86a5aeb2e333ac01be66d89ac86d5947bf82afa094ca7872f62925c9f",
+      "hash_match": true
+    }
+  ],
+  "chain_verification": [
+    {
+      "link": "GV1 \u2192 GV2",
+      "computed_hash": "e559c31411bd10f49360d17921222782ecd663fd110d33d9d4af20256dacda08",
+      "claimed_predecessor": "e559c31411bd10f49360d17921222782ecd663fd110d33d9d4af20256dacda08",
+      "match": true
+    },
+    {
+      "link": "GV2 \u2192 GV3",
+      "computed_hash": "84542189271d8c99dfa83c3623828dc77af17017f71597ca0efeb77b526858c5",
+      "claimed_predecessor": "84542189271d8c99dfa83c3623828dc77af17017f71597ca0efeb77b526858c5",
+      "match": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "test_id": "ADV-1",
+      "description": "Fields in lexicographic order",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "a4f9c0423805e7ac...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-2",
+      "description": "Whitespace added between tokens",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "b622c55d4eb2d9f6...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-3",
+      "description": "Timestamp without milliseconds (T00:00:00Z)",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "8f75cfc64a68a8dd...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-4",
+      "description": "Uppercase hex digest",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "8a4ec0d53fc24e71...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-5",
+      "description": "Integer as string (sequence_number=\"1\")",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "886c7fa5bdeaccbd...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-6",
+      "description": "Null fields omitted instead of serialized",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "5f4cd284458aa7f8...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-7",
+      "description": "Single character alteration in receipt_id",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "00b370717571c86c...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-N1",
+      "description": "Altered predecessor hash (chain verification)",
+      "expected": "\u2260 GV2 (altered predecessor rejected)",
+      "computed_hash_prefix": "59b6430b99c64c55...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-N2",
+      "description": "Altered sequence number (1 \u2192 999)",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "4d84ff0901aea0aa...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-N3",
+      "description": "Altered timestamp (1 second later)",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "ace4fd3dfbe59ce6...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-N4",
+      "description": "Altered custody_state (UNVERIFIED \u2192 VERIFIED)",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "20d5ac2d428221b5...",
+      "passes": true
+    },
+    {
+      "test_id": "ADV-N5",
+      "description": "Altered transaction_state (STAGED \u2192 COMMITTED)",
+      "expected": "\u2260 GV1",
+      "computed_hash_prefix": "abaf9fab13f0212e...",
+      "passes": true
+    }
+  ],
+  "rfc_consistency": {
+    "statement": "Implementation behavior is consistent with RFC 8785 canonical JSON string escaping, and the pre/post RFC-R1 golden vectors are byte-identical.",
+    "status": "CONFIRMED",
+    "rfc_r1_status": "CLOSED"
+  },
+  "overall_verdict": "PASS",
+  "timestamp": "2026-08-26T19:57:24.026Z"
+}
