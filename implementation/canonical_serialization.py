@@ -180,8 +180,16 @@ def verify_predecessor(receipt: Receipt, predecessor: Receipt) -> bool:
     """
     Verify that receipt.previous_receipt_hash == SHA256(CanonicalSerialize(predecessor)).
     Recomputes predecessor digest — does NOT trust stored value.
+
+    ARCHER Finding 2: A null previous_receipt_hash was accepted for ANY receipt,
+    not just the genesis. Now requires both previous_receipt_hash AND base_receipt_hash
+    to be null for genesis acceptance.
     """
     if receipt.previous_receipt_hash is None:
+        # Only the genesis receipt should have null predecessor.
+        # Genesis receipts also have null base_receipt_hash.
+        if receipt.base_receipt_hash is not None:
+            return False  # Mid-chain receipt claiming null predecessor — chain break
         return True  # Genesis receipt — no predecessor
     computed_predecessor_hash = receipt_hash(predecessor)
     return receipt.previous_receipt_hash == computed_predecessor_hash

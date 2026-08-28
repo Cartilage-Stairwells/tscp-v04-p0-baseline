@@ -69,14 +69,14 @@ def test_absence():
     print("\n--- Proposition 1: ABSENCE (the L1 case) ---")
     print("A declared artifact whose claimed bytes cannot be independently resolved.")
     
-    resolver = ArtifactResolver()
+    resolver = ArtifactResolver(authorized_root='/tmp')
     
     ref = ArtifactRef(
         artifact_id="art-L1-CORPUS-LOST",
         declared_sha256="f510f4378e9ca377ccc96abc314cae888f4ea0eba0d466969474bca63495bd53",
         declared_byte_size=6327,
         source_kind="FILESYSTEM",
-        source_locator="filesystem:/nonexistent/path/to/L1_CORPUS_INPUT_v1.json",
+        source_locator="filesystem:/tmp/nonexistent/path/to/L1_CORPUS_INPUT_v1.json",
         namespace="v0.4",
         resolver_policy="STRICT",
         reference_version="ref-v1",

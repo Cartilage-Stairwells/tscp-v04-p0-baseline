@@ -180,7 +180,15 @@ class AuthorizedSourceRegistry:
 class FilesystemSourceHandler:
     """Handles FILESYSTEM source kind."""
     
-    def __init__(self, authorized_root: str = "/"):
+    def __init__(self, authorized_root: str = None):
+        if authorized_root is None:
+            raise ValueError(
+                "authorized_root must be explicitly specified. "
+                "Refusing to default to filesystem root '/' — "
+                "this would disable symlink escape protection. "
+                "(ARCHER Finding 1: default authorized_root='/' "
+                "made startswith('/') always True.)"
+            )
         self.authorized_root = os.path.realpath(authorized_root)
     
     def resolve(self, source_locator: str) -> tuple:
@@ -282,7 +290,7 @@ class ArtifactResolver:
     """
     
     def __init__(self, resolver_identity: str = "resolver-001",
-                 authorized_root: str = "/"):
+                 authorized_root: str = None):
         self.resolver_identity = resolver_identity
         self.registry = AuthorizedSourceRegistry()
         self.fs_handler = FilesystemSourceHandler(authorized_root)
@@ -309,7 +317,9 @@ class ArtifactResolver:
             6. Compare to declared identity
             7. Emit evidence
         """
-        timestamp = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
+        now = time.time()
+        millis = int((now - int(now)) * 1000)
+        timestamp = time.strftime("%Y-%m-%dT%H:%M:%S.", time.gmtime(now)) + f"{millis:03d}Z"
         evidence_id = f"ev-{uuid.uuid4().hex[:12]}"
         
         # Step 1: Check authorization
