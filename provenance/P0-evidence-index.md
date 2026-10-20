@@ -2,7 +2,7 @@
 
 **Commit:** `cfc56a405e59b6f4dd8295886ee48a1a160087c2`
 **Tag:** `v0.4-p0-resolver-baseline`
-**Repository:** `Cartilage-Stairwells/tscp-v04-p0-baseline` (PRIVATE)
+**Repository:** `Cartilage-Stairwells/tscp-v04-p0-baseline` (PUBLIC)
 **Date:** 2026-08-26
 
 This document maps every funding-relevant claim to the exact artifact, test, and commit that supports it. It exists to prevent claims from outrunning evidence.

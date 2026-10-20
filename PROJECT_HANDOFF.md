@@ -53,7 +53,7 @@
 
 3. **No architecture expansion.** No new primitives, no ontology expansion, no scope creep. The frozen boundary is the product, not a stepping stone to be casually extended.
 
-4. **No public disclosure.** The GitHub repository remains PRIVATE. Public disclosure is a separate decision pending IP strategy. Do not make the repo public, do not share contents externally, do not post about it publicly.
+4. **Public disclosure authorized (2026-10-20).** The P0 repository is now approved for public inspection. This authorization applies to this frozen P0 evidence boundary only. Do not add P1/P2 material, private correspondence, credentials, or unrelated operational data.
 
 5. **Claims must trace to evidence.** Every technical claim in any funding material, communication, or document must trace to the exact artifact, test, and commit listed in `provenance/P0-evidence-index.md`. Claims that cannot trace to evidence must be explicitly classified as research hypothesis, not established fact.
 
@@ -157,7 +157,7 @@ This is the same evidence discipline applied one level higher.
 | RFC-R1 correction record | `provenance/RFC-R1-revision.md` |
 | SHA-256 manifest | `provenance/SHA256SUMS` |
 | Verification manifest | `provenance/verification-manifest.json` |
-| GitHub repository | `https://github.com/Cartilage-Stairwells/tscp-v04-p0-baseline` (PRIVATE) |
+| GitHub repository | `https://github.com/Cartilage-Stairwells/tscp-v04-p0-baseline` (PUBLIC) |
 | Commit | `cfc56a405e59b6f4dd8295886ee48a1a160087c2` |
 | Tag | `v0.4-p0-resolver-baseline` |
 

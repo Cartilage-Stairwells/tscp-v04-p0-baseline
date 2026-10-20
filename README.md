@@ -45,3 +45,8 @@ PYTHONPATH=implementation:independent python3 tests/iv_p0_002_differential_test.
 ```
 
 All tests must pass from the repository root.
+
+
+## Public release boundary
+
+This repository is public for inspection and reproduction of the frozen P0 evidence boundary. Public visibility does not grant a license to reuse the code or artifacts. P1/P2 work, private correspondence, credentials, and operational material remain outside this repository.
