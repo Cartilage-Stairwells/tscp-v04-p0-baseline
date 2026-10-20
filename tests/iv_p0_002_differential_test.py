@@ -807,9 +807,11 @@ print()
 # ========================================
 
 # Compute implementation hashes
-with open("independent_resolver_v1.py", 'rb') as f:
+independent_impl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "independent", "independent_resolver_v1.py")
+with open(independent_impl_path, 'rb') as f:
     ind_impl_hash = hashlib.sha256(f.read()).hexdigest()
-with open("resolver.py", 'rb') as f:
+production_impl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "implementation", "resolver.py")
+with open(production_impl_path, 'rb') as f:
     prod_impl_hash = hashlib.sha256(f.read()).hexdigest()
 
 verification_artifact = {

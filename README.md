@@ -38,10 +38,10 @@ provenance/      — Freeze record, RFC-R1 correction, SHA-256 manifest
 ## Running the tests
 
 ```bash
-python3 tests/test_resolver.py
-python3 independent/independent_verification_harness.py
-python3 tests/recursive_custody_processing.py
-python3 tests/iv_p0_002_differential_test.py
+PYTHONPATH=implementation python3 tests/test_resolver.py
+PYTHONPATH=implementation:independent python3 independent/independent_verification_harness.py
+PYTHONPATH=implementation python3 tests/recursive_custody_processing.py
+PYTHONPATH=implementation:independent python3 tests/iv_p0_002_differential_test.py
 ```
 
 All tests must pass from the repository root.
