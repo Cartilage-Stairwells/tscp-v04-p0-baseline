@@ -49,4 +49,4 @@ All tests must pass from the repository root.
 
 ## Public release boundary
 
-This repository is public for inspection and reproduction of the frozen P0 evidence boundary. Public visibility does not grant a license to reuse the code or artifacts. P1/P2 work, private correspondence, credentials, and operational material remain outside this repository.
+This repository is public for inspection and reproduction of the frozen P0 evidence boundary. Code and artifacts in this repository are licensed under the Apache License 2.0. Public visibility and the license do not make the evidence claims broader than the documented scope. P1/P2 work, private correspondence, credentials, and operational material remain outside this repository.
