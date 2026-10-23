@@ -50,3 +50,9 @@ All tests must pass from the repository root.
 ## Public release boundary
 
 This repository is public for inspection and reproduction of the frozen P0 evidence boundary. Code and artifacts in this repository are licensed under the Apache License 2.0. Public visibility and the license do not make the evidence claims broader than the documented scope. P1/P2 work, private correspondence, credentials, and operational material remain outside this repository.
+
+## License
+
+Copyright 2026 Sean Christopher Southwick.
+
+This repository is licensed under the Apache License 2.0. See [LICENSE](LICENSE).
